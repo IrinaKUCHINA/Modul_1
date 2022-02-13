@@ -1,0 +1,9 @@
+'use strict';
+
+let productName = 'oranges';
+let oranges = 23;
+let number = 18;
+let countPrice = oranges*number;
+
+console.log(productName);
+console.log(countPrice);
