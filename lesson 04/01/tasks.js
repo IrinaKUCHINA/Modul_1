@@ -24,16 +24,17 @@ if (points >= 265) {
     alert('Готовиться надо было лучше!');
 }
 
-
 const money = prompt('Сколько денег вы хотите снять?');
-const cash = Math.floor(money/100);
-console.log(cash);
 
-const getCash = cash*100;
-
-if (getCash < 100) {
-    console.log('Извините, денег нет.');
-} else {
-    console.log(`Вы можете получить ${getCash}`);
+if (money < 100) {
+    console.log('Извините, вы не сможете снять нужную сумму.');
 }
+
+else if (money%100 === 0) {
+    console.log(`Вы можете получить ${money} рублей.`);
+}
+else {
+    console.log('Извините, вы не сможете снять нужную сумму.');
+}
+
 
