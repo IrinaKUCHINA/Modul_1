@@ -12,11 +12,20 @@ const allСashbox = [
 ];
 
 
-function getAveragePriceGoods(n) {
-    
-    let b = allСashbox[n][1] / allСashbox [n][0];
-    console.log(b);
-    
+let sum = 0;
+let res = 0;
+
+function getAveragePriceGoods() {
+
+    for (let i = 0; i < allСashbox.length; i++) {
+        sum += (allСashbox[i][0]) * (allСashbox [i][1]);
+    }
+
+    for (let i = 0; i < allСashbox.length; i++) {
+        res += (allСashbox[i][0]);
+    }
+
+    return console.log(Math.floor(sum/res));
 }
 
-getAveragePriceGoods(1);
+getAveragePriceGoods();
