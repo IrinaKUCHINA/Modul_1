@@ -14,6 +14,21 @@ const answer = Math.floor(Math.random()*(max - min) + +min); console.log(answer)
 function play() {
 
     while (userNumber = prompt(`Введите число от ${min} до ${max}:`)) {
+
+        remainingGuesses--;
+        console.log(remainingGuesses);
+        if (remainingGuesses < 1) {
+            alert('У вас больше нет попыток. Игра закончена!')
+            break;
+        }
+
+        function numbers() {
+            previousGuesses.push(userNumber);
+            return console.log(previousGuesses);
+        }
+
+        numbers();
+
         if (isNaN(userNumber))
             alert("Введите число!");
         else if (userNumber > answer)
