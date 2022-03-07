@@ -1,50 +1,48 @@
 'use strict';
 
 const cart = {
-    items: [],
-    totalPrice: 0,
-    count: 0,
+  items: [],
+  totalPrice: 0,
+  count: 0,
 
-    getTotalPrice() {
-        return totalPrice;
-    },
+  getTotalPrice() {
+    return cart.totalPrice;
+  },
 
-    add(productName, priceProduct, amountProduct) {
-        const user = {
-            productName: 'productName',
-            priceProduct: 'priceProduct', 
-            amountProduct: 1,
-        }
-        return user;
-    },
+  add(productName, priceProduct, amountProduct) {
+    cart.items = {
+      productName: ['apples', 'cakes', 'books'],
+      priceProduct: [200, 500, 400],
+      amountProduct: [2, 5, 3],
+    };
+  },
 
-    increaseCount(n) {
-        return cart.count += n;
-    },
+  increaseCount(n) {
+    cart.count += n;
+  },
 
-    calculateItemPrice() {
-        let sum = 0;
-        const priceProduct = [200, 500, 400];
-        const amountProduct = [2, 5, 3];
-        let items = ['apples', 'cakes', 'books'];
+  calculateItemPrice() {
+    let sum = 0;
 
-    for (let i = 0; i < items.length; i++) {
-        sum += priceProduct[i] * amountProduct[i];
-        cart.totalPrice = sum;
+    for (let i = 0; i < cart.items.length; i++) {
+      sum += cart.add().priceProduct[i] * cart.add().amountProduct[i];
+      cart.totalPrice = sum;
     }
     return sum;
-    },
+  },
 
-    clear() {
-// не смогла найти, как очистить корзину
-    },
+  clear() {
+    cart = [];
+  },
 
-    print() {
-        console.log(JSON.stringify(cart.items));
-        console.log(cart.totalPrice);
-    },
-}
+  print() {
+    console.log(JSON.stringify(cart.items));
+    console.log(cart.totalPrice);
+  },
+};
 cart.calculateItemPrice();
-cart.totalPrice;
-console.log(cart.increaseCount(3));
 cart.print();
+cart.add();
+
+console.log(cart.increaseCount(3));
+console.log(cart.items);
