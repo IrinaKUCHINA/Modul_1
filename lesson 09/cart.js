@@ -26,10 +26,10 @@ const cart = {
 
   calculateItemPrice() {
     let sum = 0;
-    for (let i = 0; i < cart.items.length; i++) {
-      sum += cart.items.price[i] * (cart.items.count[i] + cart.count);
-      cart.items.totalPrice = sum;
-    }
+    this.items.map((item) => {
+      sum += item.price * item.count;
+    });
+    this.totalPrice = sum;
   },
 
   clear() {
