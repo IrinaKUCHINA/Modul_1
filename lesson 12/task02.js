@@ -1,23 +1,21 @@
 'use strict';
 
-let getArr = (arr) => {
-  let newArray = [];
-  let number = Math.floor((Math.random() * 10) + 1);
-  newArray = arr.push(number);
-  console.log(newArray);
+const getArr = (arr) => {
+  const number = Math.floor((Math.random() * 10) + 1);
+  arr.push(number);
 
- let sum = 0;
+  let sum = 0;
+
   for (let i = 0; i < arr.length; i++) {
-    sum = sum + arr[i];
+    sum += arr[i];
   }
 
   if (sum < 50) {
-    return getArr([1, 8]);
+    getArr(arr);
   }
   if (sum >= 50) {
-    console.log('sum :', sum);
+    return;
   }
-  return console.log(newArray);
 };
 
 getArr([1, 8]);
